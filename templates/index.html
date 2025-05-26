@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forest Analysis</title>
+</head>
+<body>
+    <h1>🌲 Forest Analysis WebApp</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if filename %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" width="400">
+    {% endif %}
+
+    {% if percentage %}
+        <h2>Estimated Tree Coverage: {{ percentage }}%</h2>
+        <h2>Tree Mask:</h2>
+        <img src="{{ url_for('static', filename='uploads/' + mask_filename) }}" width="400">
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

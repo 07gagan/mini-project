@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h1>🌲 Tree Coverage Result</h1>
+
+    <h3>Original Image:</h3>
+    <img src="{{ original_image }}" width="400">
+
+    {% if mask_image %}
+    <h3>Detected Tree Mask:</h3>
+    <img src="{{ mask_image }}" width="400">
+    {% else %}
+    <p>No tree masks detected!</p>
+    {% endif %}
+
+    <h2>🌳 Estimated Tree Coverage: {{ coverage }}%</h2>
+
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
